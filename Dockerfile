@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libyaml-dev
 
-RUN pip3 install --upgrade pip setuptools wheel && \
-    pip3 install PyYAML
+RUN pip3 install --break-system-packages --upgrade pip setuptools wheel && \
+    pip3 install --break-system-packages PyYAML
 
 COPY feed.py /usr/bin/feed.py
 
